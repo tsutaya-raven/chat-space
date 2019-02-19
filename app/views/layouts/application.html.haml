@@ -7,8 +7,15 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-  %header{class: "header"}
-    = #render partial: 'layouts/flash'
-    = yield
-  %footer
+  %header{class: "header"} グループを作成
+  .wrapper
+    .chat-side
+      .side-header siade-header
+      .group group
+    .chat-main
+      .main-header main-header
+      .message message
+    .form
+      = yield
+    %footer
 
