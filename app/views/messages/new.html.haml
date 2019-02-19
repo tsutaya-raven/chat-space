@@ -1,0 +1,6 @@
+  = form_tag("messages",method: :post) do
+    %h3
+    投稿する
+    %textarea{:cols =>"30",:name=> "text",:placeholder =>"type a message",:row => "10"}
+    %input{:name => "image",:placeholder => "image Url",:type => "text"}
+    %input{:type =>"submit",:value => "SENT"}
