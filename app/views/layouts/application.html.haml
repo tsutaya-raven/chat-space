@@ -8,13 +8,21 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+.all
   .flash-box グループを作成
   .wrapper
     .chat-side
-      .side-header siade-header
+      .side-header
+        .side-header_box
+          a
+          .icons
+            %i.fas.fa-cog
+            %i.fas.fa-edit
       .group group
     .chat-main
-      .main-header main-header
+      .main-header
+        mainheader
+        %input.edit-btn{"data-disable-with" => "Send", :type => "submit", :value => "Edit"}
       .message message
       = yield
     %footer
