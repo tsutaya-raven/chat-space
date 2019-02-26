@@ -1,9 +1,10 @@
-/ - @messages.each do |message|
-/ == render partial: 'message', locals {message: message}
-= form_tag("messages",method: :post) do
-  %h3
-  投稿する
-  %textarea{:cols =>"30",:name=> "text",:placeholder =>"type a message",:row => "10"}
-  %input{:name => "image",:placeholder => "image Url",:type => "text"}
-  %input{:type =>"submit",:value => "SENT"}
+.form
+  .new_message
+    = form_tag("messages",method: :post) do
+      .input_box
+        %input.input_box_text{:name => "text", :placeholder => "type a message", :type => "text"}
+        %label.input_box_image{:for => "message_image"}
+          %i.far.fa-image
+          %input.input-box__image__file{:name => "message[image]", :type => "file"}
+        %input.submit-btn{"data-disable-with" => "Send", :type => "submit", :value => "Send"}
 
