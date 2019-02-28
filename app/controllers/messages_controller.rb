@@ -1,12 +1,6 @@
 class MessagesController < ApplicationController
 
-  before_action :move_to_index, except: :index
-
-  def index
-    @messages = Message.all
-  end
-
-  def new
+    @message = Message.new
   end
 
   def create
@@ -14,8 +8,8 @@ class MessagesController < ApplicationController
   end
 
 private
-  def move_to_index
-    redirect_to :action => "index" unless user_signed_in?
+  def message_params
+    params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
   end
 
 end
