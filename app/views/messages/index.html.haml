@@ -1,11 +1,11 @@
 .form
   .input_box
+  = form_for("messages",method: :post) do
     %input.input_box__text{:name => "text", :placeholder => "type a message", :type => "text"}
     %label.input_box__image{:for => "message_image"}
       .i.far.fa-image
     %input.submit-btn{"data-disable-with" => "Send", :type => "submit", :value => "Send"}
 
-/ = form_for("messages",method: :post) do
 
 / %label{:for => "message_image"}
 / %input.input-box__image__file{:name => "message[image]", :type => "file"}
