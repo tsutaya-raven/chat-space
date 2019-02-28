@@ -12,7 +12,11 @@ module ChatSpace
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 <<<<<<< HEAD
+<<<<<<< HEAD
     config.generators do |g|
+=======
+     config.generators do |g|
+>>>>>>> master
 =======
      config.generators do |g|
 >>>>>>> master
@@ -22,9 +26,14 @@ module ChatSpace
       g.test_framework false
     end
 <<<<<<< HEAD
+<<<<<<< HEAD
     end
   end
 =======
+=======
+end
+
+>>>>>>> master
 end
 
 end
