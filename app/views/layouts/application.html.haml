@@ -8,13 +8,10 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-<<<<<<< HEAD
   %header{class: "header"}
     = #render partial: 'layouts/flash'
     = yield
   %footer
-=======
->>>>>>> master
 .all
   .flash-box グループを作成
   .wrapper
@@ -28,16 +25,8 @@
       .group group
     .chat-main
       .main-header
-<<<<<<< HEAD
-        mainheader
-=======
->>>>>>> master
         .main-header__box mainheader
         %input.edit-btn{"data-disable-with" => "Send", :type => "submit", :value => "Edit"}
       .message message
       = yield
     %footer
-<<<<<<< HEAD
-=======
-
->>>>>>> master
