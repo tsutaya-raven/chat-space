@@ -8,10 +8,6 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-  %header{class: "header"}
-    = #render partial: 'layouts/flash'
-    = yield
-  %footer
 .all
   .flash-box グループを作成
   .wrapper
@@ -30,3 +26,4 @@
       .message message
       = yield
     %footer
+
