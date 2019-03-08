@@ -1,7 +1,18 @@
-%div{:style => "background-image: url(#{message.image});"}
-  = simple_format(message.text)
-  %span.name
-    %span
+.message
+  .upper-message
+    .upper-message__user-name
+      = message.user.name
+    .upper-message__date
+      = message.created_at
+  .lower-meesage
+    - if message.content.present?
+      %p.lower-message__content
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+/ %div{:style => "background-image: url(#{message.image});"}
+/   = simple_format(message.text)
+/   %span.name
+/     %span
 /
   メッセージ部分？
   \/ - @messages.each do |message|

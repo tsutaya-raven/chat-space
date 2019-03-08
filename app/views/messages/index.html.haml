@@ -1,12 +1,41 @@
-.form
-  .input_box
-  = form_for("messages",method: :post) do
-    %input.input_box__text{:name => "text", :placeholder => "type a message", :type => "text"}
-    %label.input_box__image{:for => "message_image"}
-      .i.far.fa-image
-    %input.submit-btn{"data-disable-with" => "Send", :type => "submit", :value => "Send"}
+.all
+  .side-bar
+    %header__icon
+      %h3
+        = current_user.name
+      .header__icons
+        = link_to new_group_path do
+          =fa_icon 'pencil-square-o', class: 'icon'
+        = link_to edit_user_path(current_user) do
+          = fa_icon 'cog' , class: 'icon'
+  .chat
+    .group-header
+      .group-header__samary
+        = @group.name
+        .group-header__name
+          %ul
+            Member:
+            - @group.users.each do |user|
+              %li #{user.name}
+      .group-header__edit
+        = link_to "Edit" , edit_group_path(@group)
+    .messages
 
-
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'input_box__text', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
+/ .form
+/   .input_box
+/   = form_for("messages",method: :post) do
+/     %input.input_box__text{:name => "text", :placeholder => "type a message", :type => "text"}
+/     %label.input_box__image{:for => "message_image"}
+/       .i.far.fa-image
+/     %input.submit-btn{"data-disable-with" => "Send", :type => "submit", :value => "Send"}
 / %label{:for => "message_image"}
 / %input.input-box__image__file{:name => "message[image]", :type => "file"}
 

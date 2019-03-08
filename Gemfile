@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'pry-byebug'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -56,3 +56,6 @@ gem 'devise'
  gem 'haml-rails'
   gem 'erb2haml'
   gem 'font-awesome-rails'
+  gem 'carrierwave'
+gem 'mini_magick'
+
