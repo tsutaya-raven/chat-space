@@ -76,8 +76,8 @@
           margin-right: 5px;
         }
     }
-    &__edit {
-      border: 1px solid $button-color;
+    .edit-btn{
+      border: 1px solid #38aef0;
       float: right;
       height: 40px;
       line-height: 40px;
@@ -86,62 +86,70 @@
     }
   }
   // ここからメッセージエリア
-  .messages {
+   .messages {
     background-color: #FAFAFA;
-    height: calc(100vh - 100px - 90px);
-    overflow: scroll;
-    padding: 46px 40px 0;
     box-sizing: border-box;
-  }
-  .message-box {
-    padding-bottom: 40px;
-    background-color: $textcolor-w;
-    &__name {
-      font-size: 16px;
-      font-weight: bold;
-      color: #434A54;
-      margin-right: 10px;
-      display: inline-block;
-      float: left;
-    }
-    &__time {
-      font-size: 12px;
-      color: #999;
-    }
-    &__text {
-      clear: both;
-      font-size: 14px;
-      color: #434A54;
+    padding: 46px 40px 0;
+    height: calc(100% - 100px - 90px);
+    overflow: scroll;
+    .message {
+      margin-bottom:40px;
+      .upper-message {
+        display: flex;
+        &__user-name {
+          color: $black;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__date {
+          color: $light_gray;
+          font-size: 12px;
+          padding-left: 10px;
+        }
+      }
+      .lower-message {
+        margin-top: 10px;
+        &__content {
+          color: $black;
+          font-size: 14px;
+        }
+      }
     }
   }
   // ここから投稿form
   .form {
-    background-color: #DDD;
+    background-color: #DDDDDD;
+    box-sizing: border-box;
+    height: 90px;
     padding: 20px 50px 20px 40px;
-    height: 50px;
-    .form__textbox {
-      width: calc(100% - 150px);
+    .form__message {
+      border: none;
+      float: left;
       height: 50px;
-      padding-left: 10px;
+      width: calc(100% - 150px);
+    }
+    .form__mask {
+      background-color: $white;
+      float: left;
+      height: 50px;
+      padding-right: 10px;
+      &__image {
+        font-size: 20px;
+        line-height: 50px;
+      }
+      .hidden {
+        display: none;
+      }
+    }
+    &__submit {
+      background-color: $light_blue;
+      border: none;
+      color: $white;
+      float: right;
       font-size: 16px;
-      color: #434A54;
-      position: relative;
-      }
-      span::before i {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        margin-right: 10px;
-      }
-      .form__submit {
-        background-color: $button-color;
-        border: none;
-        color: $textcolor-w;
-        float: right;
-        font-size: 16px;
-        height: 50px;
-        padding: 0 30px;
-      }
+      height: 50px;
+      margin-left: 15px;
+      padding: 0 30px;
+    }
   }
 }
