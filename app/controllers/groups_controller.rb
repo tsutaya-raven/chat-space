@@ -2,7 +2,8 @@ class GroupsController < ApplicationController
   before_action :set_group, only: [:edit, :update]
 
   def index
-    @group = Group.find(3)
+    # @groups = Group.all
+    #nameカラムが全部表示される
   end
 
   def new
@@ -38,7 +39,4 @@ end
   def set_group
     @group = Group.find(params[:id])
   end
-
-
-
 end
