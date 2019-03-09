@@ -28,21 +28,21 @@
       float: right;
     }
   }
-  .group {
-    width: 260px;
-    background-color: #2f3e51;
-    color: $textcolor-w;
-    padding: 20px 20px 0 20px;
-    height: calc(100vh - 120px);
-    &__name {
-      margin-bottom: 5px;
-      font-size: 15px;
-    }
-    &__message {
-      margin-bottom: 40px;
-      font-size: 11px;
-      &__sample {
+      .group {
+        height: calc(100vh - 120px);
+        width: 260px;
+        background-color: #2f3e51;
         color: $textcolor-w;
+        padding: 20px 20px 0 20px;
+        &__name {
+          margin-bottom: 5px;
+          font-size: 15px;
+        }
+        &__message {
+          margin-bottom: 40px;
+          font-size: 11px;
+          &__sample {
+            color: $textcolor-w;
       }
     }
   }
@@ -86,7 +86,7 @@
     }
   }
   // ここからメッセージエリア
-  .message-area {
+  .messages {
     background-color: #FAFAFA;
     height: calc(100vh - 100px - 90px);
     overflow: scroll;

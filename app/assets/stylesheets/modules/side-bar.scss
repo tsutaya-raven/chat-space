@@ -28,17 +28,16 @@
       color:$white;
     }
   }
-
   .group {
+    height: calc(100vh - 120px);
     background-color: $side_blue_light;
-    height: calc(100vh - 100px);
-    padding: 0 20px;
+    padding: 20px 20px 0;
     overflow: scroll;
     &__name {
       color: $white;
       font-size: $side_group_name;
     }
-    &__message {
+    .group__message {
       color: $white;
       font-size: $side_group_message;
       margin-top: 5px;

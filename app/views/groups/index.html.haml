@@ -1,9 +1,30 @@
 .wrapper
 
   = render'shared/side_bar'
-  .chat-main
-    .main-header
-      .main-header__box mainheader
-      %input.edit-btn{"data-disable-with" => "Send", :type => "submit", :value => "Edit"}
-    .message message
+  .chat
+    .group-header
+      .group-header__samary
+        = @group.name
+        .group-header__name
+          %ul
+            Member:
+            - @group.users.each do |user|
+              %li #{user.name}
+      .group-header__edit
+        = link_to "Edit" , edit_group_path(@group)
+    .messages
+      / = render @messages
     .form
+      / = form_for [@group, @message] do |f|
+      /   = f.text_field :content, class: 'input_box__text', placeholder: 'type a message'
+      /   .form__mask
+      /     = f.label :image, class: 'form__mask__image' do
+      /       = fa_icon 'picture-o', class: 'icon'
+      /       = f.file_field :image, class: 'hidden'
+      /   = f.submit 'Send', class: 'form__submit'
+    /     .chat-main
+    / .main-header
+    /   .main-header__box
+    / .message
+    / .form
+
